@@ -3,7 +3,7 @@ import React from 'react'
 
 const SinglePokemon = (props) => {
     return (
-        <li><a href='/' url={props.url} onClick={props.click}>{props.name}</a></li>
+        <li><a href='/' data-url={props.url} onClick={props.click}>{props.name}</a></li>
     );
 }
 

@@ -23,7 +23,11 @@ class App extends Component {
 
   currentPokemonHandler = (e) => {
     e.preventDefault()
-    console.log('work');
+    let currentPokemon = e.target.attributes[1].nodeValue
+    this.setState({
+      currentPokemon
+    })
+
   }
   render() {
 
