@@ -3,7 +3,7 @@ import './Header.scss'
 import { Navbar, Nav } from 'react-bootstrap'
 const Header = () => {
     return (
-        <Navbar bg='dark' expand='lg'>
+        <Navbar style={{ width: '100%' }} bg='dark'  >
             <Navbar.Brand>Logo</Navbar.Brand>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav.Link>Gen 1</Nav.Link>
