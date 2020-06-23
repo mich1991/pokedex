@@ -22,7 +22,7 @@ class App extends Component {
 
   fetchAPI = () => {
     const { limit, offset } = this.state.currentGeneration
-    // console.log(limit, offset);
+
     const fetchAPI = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
     fetch(fetchAPI)
       .then(res => res.json())
@@ -35,7 +35,14 @@ class App extends Component {
     this.fetchAPI()
   }
 
+  componentDidUpdate(prevProps, prevState) {
 
+    // List updating
+    if (this.state.currentGeneration.limit !== prevState.currentGeneration.limit || this.state.currentGeneration.offset !== prevState.currentGeneration.offset) {
+      console.log('pokemonList did update');
+      this.fetchAPI()
+    }
+  }
 
 
   // Choose pokemon from list in PokemonList.js

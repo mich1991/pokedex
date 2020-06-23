@@ -39,29 +39,37 @@ class Pokemon extends Component {
             return (
                 <div>
                     <p>Choose your pokemon! </p>
-
                 </div>
             );
         } else {
             const { name, sprites } = this.state.pokemon
-
+            const capitalizedName = name[0].toUpperCase() + name.slice(1)
             return (
                 <CardDeck>
-                    <Card>
+                    <Card className="text-center" >
                         <Card.Img variant='top' src={sprites.front_default} ></Card.Img>
                         <Card.Body>
-                            <Card.Title >{name}</Card.Title>
+                            <Card.Title >{capitalizedName}</Card.Title>
                             <Card.Text> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, cum. </Card.Text>
                         </Card.Body>
                     </Card>
                     <Card>
-
+                        <Card.Body>
+                            <Card.Title >Stats</Card.Title>
+                            <Card.Text> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, cum. </Card.Text>
+                        </Card.Body>
                     </Card>
                     <Card>
-
+                        <Card.Body>
+                            <Card.Title >Type</Card.Title>
+                            <Card.Text> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, cum. </Card.Text>
+                        </Card.Body>
                     </Card>
                     <Card>
-
+                        <Card.Body>
+                            <Card.Title >{capitalizedName}</Card.Title>
+                            <Card.Text> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, cum. </Card.Text>
+                        </Card.Body>
                     </Card>
                 </CardDeck>
             )
