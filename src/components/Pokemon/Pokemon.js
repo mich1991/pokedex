@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Card, CardDeck } from 'react-bootstrap'
+import PokemonStats from './PokemonStats'
+import PokemonType from './PokemonType/PokemonType'
 
 // In future change class component into stateless with hooks
 class Pokemon extends Component {
@@ -13,7 +15,7 @@ class Pokemon extends Component {
     }
 
     fetchPokemon = () => {
-        console.log(this.props);
+        // console.log(this.props);
         const { currentPokemon } = this.props
         fetch(currentPokemon)
             .then(res => res.json())
@@ -56,19 +58,13 @@ class Pokemon extends Component {
                     <Card>
                         <Card.Body>
                             <Card.Title >Stats</Card.Title>
-                            <Card.Text> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, cum. </Card.Text>
+                            <PokemonStats pokemon={this.state.pokemon} />
                         </Card.Body>
                     </Card>
                     <Card>
                         <Card.Body>
                             <Card.Title >Type</Card.Title>
-                            <Card.Text> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, cum. </Card.Text>
-                        </Card.Body>
-                    </Card>
-                    <Card>
-                        <Card.Body>
-                            <Card.Title >{capitalizedName}</Card.Title>
-                            <Card.Text> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, cum. </Card.Text>
+                            <PokemonType types={this.state.pokemon.types} />
                         </Card.Body>
                     </Card>
                 </CardDeck>
