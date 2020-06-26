@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Card, CardDeck } from 'react-bootstrap'
-import PokemonStats from './PokemonStats'
+import PokemonStats from './PokemonStats/PokemonStats'
 import PokemonType from './PokemonType/PokemonType'
-
 // In future change class component into stateless with hooks
 class Pokemon extends Component {
     constructor(props) {

@@ -48,7 +48,7 @@ const Type = (props) => {
     return (
         <>
             <h4>{props.typeName.toUpperCase()} </h4>
-            {damageRelation ? damageRelation.map(ar => ar.combineElements.length > 0 ? <p><Badge variant='primary'>{ar.dmgRelationName.toUpperCase()}</Badge> : <br /> <Badge variant='warning'>{ar.combineElements} </Badge></p> : null) : null}
+            {damageRelation ? damageRelation.map(ar => ar.combineElements.length > 0 ? <p><Badge variant='primary'>{ar.dmgRelationName.toUpperCase()}</Badge> : <br /> <Badge pill variant='warning'>{ar.combineElements} </Badge></p> : null) : null}
         </>
     );
 }

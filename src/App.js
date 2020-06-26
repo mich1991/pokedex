@@ -5,7 +5,7 @@ import PokemonList from './components/PokemonList/PokemonList'
 import Pokemon from './components/Pokemon/Pokemon'
 import Footer from './components/Footer/Footer'
 import { Container, Col, Row, } from 'react-bootstrap'
-
+import Background from './background.png'
 class App extends Component {
   state = {
     pokemons: [{
@@ -76,8 +76,8 @@ class App extends Component {
           <Header generation={this.state.currentGeneration} click={this.currentGenerationHandler} />
         </Row>
         <Row sm={12}>
-          <Col sm={2} > <PokemonList pokemonList={this.state.pokemons} generation={this.state.currentGeneration} currentPokemon={this.state.currentPokemon} click={this.currentPokemonHandler} /> </Col>
-          <Col sm={10}> <Pokemon currentPokemon={this.state.currentPokemon} generation={this.state.currentGeneration} /> </Col>
+          <Col sm={2}> <PokemonList pokemonList={this.state.pokemons} generation={this.state.currentGeneration} currentPokemon={this.state.currentPokemon} click={this.currentPokemonHandler} /></Col>
+          <Col> <Pokemon currentPokemon={this.state.currentPokemon} generation={this.state.currentGeneration} /></Col>
         </Row>
         <Row>
           <Footer />
