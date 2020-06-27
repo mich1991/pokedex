@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Badge } from 'react-bootstrap'
+import { Badge, Col } from 'react-bootstrap'
 
 const Type = (props) => {
 
@@ -21,7 +21,7 @@ const Type = (props) => {
     const testing = type.damage_relations
 
     const answer = function () {
-        if (typeof testing === 'object') {
+        if (typeof type.damage_relations === 'object') {
             let output = []
             for (const key in testing) {
                 if (testing.hasOwnProperty(key)) {
@@ -46,10 +46,10 @@ const Type = (props) => {
     let damageRelation = answer()
 
     return (
-        <>
+        <Col>
             <h4>{props.typeName.toUpperCase()} </h4>
             {damageRelation ? damageRelation.map(ar => ar.combineElements.length > 0 ? <p><Badge variant='primary'>{ar.dmgRelationName.toUpperCase()}</Badge> : <br /> <Badge pill variant='warning'>{ar.combineElements} </Badge></p> : null) : null}
-        </>
+        </Col>
     );
 }
 

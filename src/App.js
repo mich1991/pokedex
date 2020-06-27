@@ -3,7 +3,6 @@ import './App.scss';
 import Header from './components/Header/Header'
 import PokemonList from './components/PokemonList/PokemonList'
 import Pokemon from './components/Pokemon/Pokemon'
-import Footer from './components/Footer/Footer'
 import { Container, Col, Row, } from 'react-bootstrap'
 import Background from './background.png'
 class App extends Component {

@@ -1,3 +1,54 @@
 ol {
-    min-width: 50px
+    width: 160px;
+    height: calc(100vh - 52px);
+    overflow-y: scroll;
+    border: solid 1px #333;
+    border-top: none;
+    box-shadow: 2px 2px 1px 1px #111;
+    padding-top: 5px;
+    background-color: #ddd;
+
+    @media (max-width: 768px) {
+        height: 50px;
+        margin-top: 5px;
+        width: 100%;
+        background-color: #333;
+        box-shadow: 0 -3px 2px 2px #222;
+        overflow: auto;
+        white-space: nowrap;
+    }
+}
+
+li {
+    text-transform: capitalize;
+
+    a {
+        color: rgb(68, 44, 0);
+
+        &:hover {
+            color: orangered;
+            text-decoration: none;
+            padding-left: 10px;
+        }
+    }
+
+
+    @media (max-width: 768px) {
+        display: inline-block;
+        margin: 5px 40px 10px 0;
+        font-size: 1rem;
+        height: 30px;
+        text-transform: capitalize;
+
+        a {
+            color: white;
+
+            &:hover {
+                color: red;
+                text-decoration: none;
+                padding: 0;
+
+            }
+        }
+    }
 }
