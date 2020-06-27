@@ -48,6 +48,7 @@ class Pokemon extends Component {
         } else {
             const { name, sprites } = this.state.pokemon
             const capitalizedName = name[0].toUpperCase() + name.slice(1)
+            window.document.title = `Pokedex - ${capitalizedName}`
             return (
                 <CardDeck className='mt-3'>
                     <Col lg={4} md={6} sm={6} className='mb-3'>
