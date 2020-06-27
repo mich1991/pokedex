@@ -50,7 +50,7 @@ class Pokemon extends Component {
             const capitalizedName = name[0].toUpperCase() + name.slice(1)
             return (
                 <CardDeck className='mt-3'>
-                    <Col md={4} sm={12}>
+                    <Col lg={4} md={6} sm={6} className='mb-3'>
                         <Card className="text-center" >
                             <Card.Img variant='top' src={sprites.front_default} ></Card.Img>
                             <Card.Body >
@@ -59,19 +59,21 @@ class Pokemon extends Component {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col>
+                    <Col lg={4} md={6} sm={6}>
                         <Card>
                             <Card.Body>
-                                <Card.Title className='text-center'>Stats</Card.Title>
+                                <Card.Title className='text-center bg-dark text-danger'>Stats</Card.Title>
                                 <PokemonStats pokemon={this.state.pokemon} />
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Card>
-                        <Card.Body>
-                            <PokemonType types={this.state.pokemon.types} />
-                        </Card.Body>
-                    </Card>
+                    <Col lg={4} md={12} sm={12}>
+                        <Card>
+                            <Card.Body>
+                                <PokemonType types={this.state.pokemon.types} />
+                            </Card.Body>
+                        </Card>
+                    </Col>
                 </CardDeck>
             )
         }

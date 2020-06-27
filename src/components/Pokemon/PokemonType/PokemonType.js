@@ -1,5 +1,6 @@
 import React from 'react'
 import Type from './Type'
+import { Row } from 'react-bootstrap'
 const PokemonType = (props) => {
 
     // Transform data into easier to access array.
@@ -13,9 +14,9 @@ const PokemonType = (props) => {
 
 
     return (
-        <div>
+        <Row>
             {typeList}
-        </div>
+        </Row>
     );
 }
 

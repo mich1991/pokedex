@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Badge, Col } from 'react-bootstrap'
+import { Badge, Col, Row } from 'react-bootstrap'
 
 const Type = (props) => {
 
@@ -47,12 +47,13 @@ const Type = (props) => {
 
     return (
 
-        <Col>
+        <Col sm={6} md={6} lg={12}>
             {hasError ? <p>Error: something went wrong </p> : null}
-            <h4>{props.typeName.toUpperCase()} </h4>
+            <h4 className='text-center mt-2 bg-dark text-danger'>{props.typeName.toUpperCase()} </h4>
             {damageRelation ? damageRelation.map(ar => ar.combineElements.length > 0 ?
                 <div className='capitalized' key={ar.dmgRelationName}><Badge variant='primary'>{ar.dmgRelationName.toUpperCase()} :</Badge> <br /> {ar.combineElements}</div> : null) : null}
         </Col>
+
     );
 }
 
