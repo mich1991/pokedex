@@ -46,9 +46,12 @@ const Type = (props) => {
     let damageRelation = answer()
 
     return (
+
         <Col>
+            {hasError ? <p>Error: something went wrong </p> : null}
             <h4>{props.typeName.toUpperCase()} </h4>
-            {damageRelation ? damageRelation.map(ar => ar.combineElements.length > 0 ? <div key={ar.dmgRelationName}><Badge variant='primary'>{ar.dmgRelationName.toUpperCase()}</Badge> : <br /> <Badge pill variant='warning'>{ar.combineElements} </Badge></div> : null) : null}
+            {damageRelation ? damageRelation.map(ar => ar.combineElements.length > 0 ?
+                <div className='capitalized' key={ar.dmgRelationName}><Badge variant='primary'>{ar.dmgRelationName.toUpperCase()} :</Badge> <br /> {ar.combineElements}</div> : null) : null}
         </Col>
     );
 }

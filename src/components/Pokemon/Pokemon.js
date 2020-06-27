@@ -41,7 +41,7 @@ class Pokemon extends Component {
 
         if (this.state.isLoaded === false) {
             return (
-                <div>
+                <div className='bigTitle'>
                     <p>Choose your pokemon! </p>
                 </div>
             );

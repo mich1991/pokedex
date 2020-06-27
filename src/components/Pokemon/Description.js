@@ -15,17 +15,19 @@ const Description = (props) => {
 
     useEffect(() => {
         fetchData()
-        // console.log('updated', props.url);
     }, [props.url])
 
+    // Finding english description in database
     let description = ''
+    let index = -1
     if (typeof spiecies !== 'undefined') {
-        description = spiecies.flavor_text_entries[0].flavor_text
+        index = spiecies.flavor_text_entries.findIndex(index => index.language.name === "en");
+        description = spiecies.flavor_text_entries[index].flavor_text
     }
 
 
     return (
-        <p> {description}</p>
+        <p> <i> {hasError ? <p>error: something went wrong</p> : description} </i> </p>
     );
 }
 
