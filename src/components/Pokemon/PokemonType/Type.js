@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Badge, Col, Row } from 'react-bootstrap'
+import { Badge, Col, } from 'react-bootstrap'
 
 const Type = (props) => {
 
