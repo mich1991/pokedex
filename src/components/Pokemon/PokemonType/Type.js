@@ -18,14 +18,14 @@ const Type = (props) => {
         fetchData()
     }, [])
 
-    const testing = type.damage_relations
+    const dmgRel = type.damage_relations
 
     const answer = function () {
-        if (typeof type.damage_relations === 'object') {
+        if (typeof dmgRel === 'object') {
             let output = []
-            for (const key in testing) {
-                if (testing.hasOwnProperty(key)) {
-                    const element = testing[key];
+            for (const key in dmgRel) {
+                if (dmgRel.hasOwnProperty(key)) {
+                    const element = dmgRel[key];
                     let combineElements = ''
                     for (const secKey in element) {
                         combineElements += `${element[secKey].name} `
@@ -34,7 +34,7 @@ const Type = (props) => {
                     // console.log(key, combineElements);
                     const dmgRelationName = key.replace(/_/g, ' ')
 
-                    console.log(key.replace(/_/g, ' '));
+                    // console.log(key.replace(/_/g, ' '));
 
                     output.push({ dmgRelationName, combineElements })
 
@@ -48,7 +48,7 @@ const Type = (props) => {
     return (
         <Col>
             <h4>{props.typeName.toUpperCase()} </h4>
-            {damageRelation ? damageRelation.map(ar => ar.combineElements.length > 0 ? <p><Badge variant='primary'>{ar.dmgRelationName.toUpperCase()}</Badge> : <br /> <Badge pill variant='warning'>{ar.combineElements} </Badge></p> : null) : null}
+            {damageRelation ? damageRelation.map(ar => ar.combineElements.length > 0 ? <div key={ar.dmgRelationName}><Badge variant='primary'>{ar.dmgRelationName.toUpperCase()}</Badge> : <br /> <Badge pill variant='warning'>{ar.combineElements} </Badge></div> : null) : null}
         </Col>
     );
 }

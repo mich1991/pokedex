@@ -4,7 +4,14 @@ body {
     height: 100vh;
     // overflow: hidden;
     width: 100wh;
+    background-image: url('./background.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
 }
+
+
+
 
 ::-webkit-scrollbar {
     width: 20px;

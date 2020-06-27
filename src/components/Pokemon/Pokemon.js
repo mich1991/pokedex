@@ -3,6 +3,7 @@ import { Card, CardDeck, Col } from 'react-bootstrap'
 import PokemonStats from './PokemonStats/PokemonStats'
 import PokemonType from './PokemonType/PokemonType'
 import './Pokemon.scss'
+import Description from './Description'
 
 // In future change class component into stateless with hooks
 class Pokemon extends Component {
@@ -52,16 +53,16 @@ class Pokemon extends Component {
                     <Col md={4} sm={12}>
                         <Card className="text-center" >
                             <Card.Img variant='top' src={sprites.front_default} ></Card.Img>
-                            <Card.Body>
+                            <Card.Body >
                                 <Card.Title >{capitalizedName}</Card.Title>
-                                <Card.Text> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, cum. </Card.Text>
+                                <Description url={this.state.pokemon.species.url} />
                             </Card.Body>
                         </Card>
                     </Col>
                     <Col>
                         <Card>
                             <Card.Body>
-                                <Card.Title >Stats</Card.Title>
+                                <Card.Title className='text-center'>Stats</Card.Title>
                                 <PokemonStats pokemon={this.state.pokemon} />
                             </Card.Body>
                         </Card>

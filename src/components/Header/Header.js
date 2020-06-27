@@ -7,6 +7,7 @@ const Header = (props) => {
         <Navbar style={{ width: '100%' }} bg='dark' className='header '  >
             <Navbar.Brand><img
                 src={Logo}
+                alt='LOGO'
                 width="50"
                 height="50"
                 className="d-inline-block align-top"
