@@ -5,15 +5,16 @@ const Description = (props) => {
     const [hasError, setErrors] = useState(false);
     const [spiecies, setSpecies] = useState()
 
-    async function fetchData() {
-        const res = await fetch(props.url);
-        res
-            .json()
-            .then(res => setSpecies(res))
-            .catch(err => setErrors(err));
-    }
 
     useEffect(() => {
+        async function fetchData() {
+            const res = await fetch(props.url);
+            res
+                .json()
+                .then(res => setSpecies(res))
+                .catch(err => setErrors(err));
+        }
+
         fetchData()
     }, [props.url])
 

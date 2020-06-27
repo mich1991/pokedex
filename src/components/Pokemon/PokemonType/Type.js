@@ -6,17 +6,18 @@ const Type = (props) => {
     const [hasError, setErrors] = useState(false);
     const [type, setType] = useState({})
 
-    async function fetchData() {
-        const res = await fetch(props.typeUrl);
-        res
-            .json()
-            .then(res => setType(res))
-            .catch(err => setErrors(err));
-    }
+
 
     useEffect(() => {
+        async function fetchData() {
+            const res = await fetch(props.typeUrl);
+            res
+                .json()
+                .then(res => setType(res))
+                .catch(err => setErrors(err));
+        }
         fetchData()
-    }, [])
+    }, [props.typeUrl])
 
     const dmgRel = type.damage_relations
 
