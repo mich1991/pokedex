@@ -9,6 +9,7 @@ ol {
     box-shadow: 0px 2px 1px 1px #111;
     padding-top: 15px;
     background-color: #ddd;
+    border-top: #222 1px solid;
 
     @media (max-width: 768px) {
         position: fixed;
