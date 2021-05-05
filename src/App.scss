@@ -10,11 +10,16 @@ body {
     background-repeat: repeat;
 }
 
-
+@media (max-width: 728px) {
+    #mobile-friendly {
+        margin-top: 100px !important;
+        z-index: 4;
+    }
+}
 
 
 ::-webkit-scrollbar {
-    width: 20px;
+    width: 10px;
 }
 
 /* Track */

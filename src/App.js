@@ -75,7 +75,7 @@ class App extends Component {
         </Row>
         <Row sm={12}>
           <Col sm={12} md={2} className='pl-0 pr-0 md-0 mr-3'> <PokemonList pokemonList={this.state.pokemons} generation={this.state.currentGeneration} currentPokemon={this.state.currentPokemon} click={this.currentPokemonHandler} /></Col>
-          <Col> <Pokemon currentPokemon={this.state.currentPokemon} generation={this.state.currentGeneration} /></Col>
+          <Col className='mt-5' id='mobile-friendly'> <Pokemon currentPokemon={this.state.currentPokemon} generation={this.state.currentGeneration} /></Col>
         </Row>
       </Container>
     );
